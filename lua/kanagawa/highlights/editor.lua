@@ -23,7 +23,7 @@ function M.setup(colors, config)
         -- CursorColumn	Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorColumn = { link = "CursorLine" },
         -- CursorLine	Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-        CursorLine = { bg = theme.ui.bg_p2 },
+        CursorLine = { bg = config.transparent and "NONE" or theme.ui.bg_p2 },
         -- Directory	Directory names (and other special names in listings).
         Directory = { fg = theme.syn.fun },
         -- DiffAdd		Diff mode: Added line. |diff.txt|
@@ -46,19 +46,19 @@ function M.setup(colors, config)
         -- Folded		Line used for closed folds.
         Folded = { fg = theme.ui.special, bg = theme.ui.bg_p1 },
         -- FoldColumn	'foldcolumn'
-        FoldColumn = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
+        FoldColumn = { fg = theme.ui.nontext, bg = config.transparent and "NONE" or theme.ui.bg_gutter },
         -- SignColumn	Column where |signs| are displayed.
-        SignColumn = { fg = theme.ui.special, bg = theme.ui.bg_gutter },
+        SignColumn = { fg = theme.ui.special, bg = config.transparent and "NONE" or theme.ui.bg_gutter },
         -- IncSearch	'incsearch' highlighting; also used for the text replaced with ":s///c".
         IncSearch = { fg = theme.ui.fg_reverse, bg = theme.diag.warning },
         -- Substitute	|:substitute| replacement text highlighting.
         Substitute = { fg = theme.ui.fg, bg = theme.vcs.removed },
         -- LineNr		Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        LineNr = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
+        LineNr = { fg = theme.ui.nontext, bg = config.transparent and "NONE" or theme.ui.bg_gutter },
         -- LineNrAbove	Line number for when the 'relativenumber' option is set, above the cursor line.
         -- LineNrBelow	Line number for when the 'relativenumber' option is set, below the cursor line.
         -- CursorLineNr	Like LineNr when 'cursorline' is set and 'cursorlineopt' contains "number" or is "both", for the cursor line.
-        CursorLineNr = { fg = theme.diag.warning, bg = theme.ui.bg_gutter, bold = true },
+        CursorLineNr = { fg = theme.diag.warning, bg = config.transparent and "NONE" or theme.ui.bg_gutter, bold = true },
         -- CursorLineFold	Like FoldColumn when 'cursorline' is set for the cursor line.
         -- CursorLineSign	Like SignColumn when 'cursorline' is set for the cursor line.
         -- MatchParen	Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -119,15 +119,15 @@ function M.setup(colors, config)
         -- SpellRare	Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
         SpellRare = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
         -- StatusLine	Status line of current window.
-        StatusLine = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+        StatusLine = { fg = theme.ui.fg_dim, bg = config.transparent and "NONE" or theme.ui.bg_m3 },
         -- StatusLineNC	Status lines of not-current windows. Note: If this is equal to "StatusLine", Vim will use "^^^" in the status line of the current window.
-        StatusLineNC = { fg = theme.ui.nontext, bg = theme.ui.bg_m3 },
+        StatusLineNC = { fg = theme.ui.nontext, bg = config.transparent and "NONE" or theme.ui.bg_m3 },
         -- TabLine		Tab pages line, not active tab page label.
-        TabLine = { bg = theme.ui.bg_m3, fg = theme.ui.special },
+        TabLine = { fg = theme.ui.special, bg = config.transparent and "NONE" or theme.ui.bg_m3 },
         -- TabLineFill	Tab pages line, where there are no labels.
-        TabLineFill = { bg = theme.ui.bg },
+        TabLineFill = { bg = config.transparent and "NONE" or theme.ui.bg },
         -- TabLineSel	Tab pages line, active tab page label.
-        TabLineSel = { fg = theme.ui.fg_dim, bg = theme.ui.bg_p1 },
+        TabLineSel = { fg = theme.ui.fg_dim, bg = config.transparent and "NONE" or theme.ui.bg_p1 },
         -- Title		Titles for output from ":set all", ":autocmd" etc.
         Title = { fg = theme.syn.fun, bold = true },
         -- Visual		Visual mode selection.
@@ -168,10 +168,10 @@ function M.setup(colors, config)
         DiagnosticFloatingHint = { fg = theme.diag.hint },
         DiagnosticFloatingOk = { fg = theme.diag.ok },
 
-        DiagnosticSignError = { fg = theme.diag.error, bg = theme.ui.bg_gutter },
-        DiagnosticSignWarn = { fg = theme.diag.warning, bg = theme.ui.bg_gutter },
-        DiagnosticSignInfo = { fg = theme.diag.info, bg = theme.ui.bg_gutter },
-        DiagnosticSignHint = { fg = theme.diag.hint, bg = theme.ui.bg_gutter },
+        DiagnosticSignError = { fg = theme.diag.error, bg = config.transparent and "NONE" or theme.ui.bg_gutter },
+        DiagnosticSignWarn = { fg = theme.diag.warning, bg = config.transparent and "NONE" or theme.ui.bg_gutter },
+        DiagnosticSignInfo = { fg = theme.diag.info, bg = config.transparent and "NONE" or theme.ui.bg_gutter },
+        DiagnosticSignHint = { fg = theme.diag.hint, bg = config.transparent and "NONE" or theme.ui.bg_gutter },
 
         DiagnosticVirtualTextError = { link = "DiagnosticError" },
         DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },

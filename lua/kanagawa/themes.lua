@@ -191,6 +191,15 @@ return {
                 palette.surimiOrange, -- extended color 1
                 palette.peachRed, -- extended color 2
             },
+            lualine = {
+                normal   = palette.crystalBlue,
+                insert   = palette.springGreen,
+                visual   = palette.oniViolet,
+                replace  = palette.surimiOrange,
+                command  = palette.carpYellow,
+                terminal = palette.springViolet1,
+                mid      = palette.waveBlue1,
+            },
         }
     end,
     ---@param palette PaletteColors
@@ -294,6 +303,237 @@ return {
                 palette.dragonOrange, -- extended color 1
                 palette.dragonOrange2, -- extended color 2
             },
+            lualine = {
+                normal   = palette.dragonBlue2,
+                insert   = palette.dragonGreen2,
+                visual   = palette.dragonViolet,
+                replace  = palette.dragonOrange,
+                command  = palette.dragonYellow,
+                terminal = palette.dragonGray3,
+                mid      = palette.waveBlue1,
+            },
+        }
+    end,
+    ---@param palette PaletteColors
+    ---@return ThemeColors
+    nina = function(palette)
+        return {
+            ui = {
+                fg         = palette.ninaFg,
+                fg_dim     = palette.ninaFgDim,
+                fg_reverse = palette.ninaNearBlk,
+
+                bg_dim     = palette.ninaPopupBg,
+                bg_gutter  = "#10101E",
+
+                bg_m3      = palette.ninaNearBlk,
+                bg_m2      = "#0D0D18",
+                bg_m1      = "#10101E",
+                bg         = palette.ninaPopupBg,
+                bg_p1      = "#1A1A2A",
+                bg_p2      = palette.ninaVisual,
+
+                special    = palette.ninaViolet,
+                nontext    = palette.ninaSep,
+                whitespace = palette.ninaSep,
+
+                bg_search  = palette.ninaBlue,
+                bg_visual  = palette.ninaVisual,
+
+                pmenu      = {
+                    fg       = palette.ninaFg,
+                    fg_sel   = palette.ninaNearBlk,
+                    bg       = palette.ninaPopupBg,
+                    bg_sel   = palette.ninaBlue,
+                    bg_sbar  = palette.ninaPopupBg,
+                    bg_thumb = palette.ninaSep,
+                },
+                float      = {
+                    fg        = palette.ninaFg,
+                    bg        = palette.ninaPopupBg,
+                    fg_border = palette.ninaSep,
+                    bg_border = palette.ninaPopupBg,
+                },
+            },
+            syn = {
+                string     = palette.ninaRed,
+                variable   = "none",
+                number     = palette.ninaYellow,
+                constant   = palette.ninaYellowLt,
+                identifier = palette.ninaGreen,
+                parameter  = palette.ninaFgDim,
+                fun        = palette.ninaBlue,
+                statement  = palette.ninaPink,
+                keyword    = palette.ninaPink,
+                operator   = palette.ninaPink,
+                preproc    = palette.ninaCyan,
+                type       = palette.ninaGreen,
+                regex      = palette.ninaPinkDim,
+                deprecated = palette.ninaDim,
+                comment    = palette.ninaDim,
+                punct      = palette.ninaFgDim,
+                special1   = palette.ninaViolet,
+                special2   = palette.ninaRed,
+                special3   = palette.ninaPinkDim,
+            },
+            vcs = {
+                added   = palette.ninaGreen,
+                removed = palette.ninaRed,
+                changed = palette.ninaYellow,
+            },
+            diff = {
+                add    = "#0E2A18",
+                delete = "#2A0E18",
+                change = "#0E1428",
+                text   = "#1A2040",
+            },
+            diag = {
+                ok      = palette.ninaGreen,
+                error   = palette.ninaPink,
+                warning = palette.ninaOrange,
+                info    = palette.ninaBlue,
+                hint    = palette.ninaGreenLt,
+            },
+            term = {
+                palette.ninaNearBlk,  -- black
+                palette.ninaRed,      -- red
+                palette.ninaGreen,    -- green
+                palette.ninaYellow,   -- yellow
+                palette.ninaBlue,     -- blue
+                palette.ninaPink,     -- magenta
+                palette.ninaCyan,     -- cyan
+                palette.ninaFg,       -- white
+                palette.ninaDim,      -- bright black
+                palette.ninaRedDim,   -- bright red
+                palette.ninaGreenLt,  -- bright green
+                palette.ninaYellowLt, -- bright yellow
+                palette.ninaBlueLt,   -- bright blue
+                palette.ninaViolet,   -- bright magenta
+                palette.ninaCyan,     -- bright cyan
+                palette.ninaFg,       -- bright white
+                palette.ninaOrange,   -- extended color 1
+                palette.ninaPinkDim,  -- extended color 2
+            },
+            lualine = {
+                normal   = palette.ninaRed,
+                insert   = palette.ninaGreen,
+                visual   = palette.ninaBlue,
+                replace  = palette.ninaPink,
+                command  = palette.ninaYellow,
+                terminal = palette.ninaViolet,
+                mid      = palette.ninaPopupBg,
+            },
+        }
+    end,
+    ---@param palette PaletteColors
+    ---@return ThemeColors
+    rebecca = function(palette)
+        return {
+            ui = {
+                fg         = palette.rebeccaFg,
+                fg_dim     = palette.rebeccaFgDim,
+                fg_reverse = palette.rebeccaNearBlk,
+
+                bg_dim     = palette.rebeccaDarkOl,
+                bg_gutter  = "#1A2210",
+
+                bg_m3      = palette.rebeccaNearBlk,
+                bg_m2      = "#141A0A",
+                bg_m1      = "#1A2210",
+                bg         = palette.rebeccaDarkOl,
+                bg_p1      = "#222E18",
+                bg_p2      = palette.rebeccaVisual,
+
+                special    = palette.rebeccaOlive,
+                nontext    = palette.rebeccaOlive,
+                whitespace = palette.rebeccaOlive,
+
+                bg_search  = palette.rebeccaYellow,
+                bg_visual  = palette.rebeccaVisual,
+
+                pmenu      = {
+                    fg       = palette.rebeccaFg,
+                    fg_sel   = palette.rebeccaNearBlk,
+                    bg       = palette.rebeccaDarkOl,
+                    bg_sel   = palette.rebeccaYellow,
+                    bg_sbar  = palette.rebeccaDarkOl,
+                    bg_thumb = palette.rebeccaOlive,
+                },
+                float      = {
+                    fg        = palette.rebeccaFg,
+                    bg        = palette.rebeccaDarkOl,
+                    fg_border = palette.rebeccaOlive,
+                    bg_border = palette.rebeccaDarkOl,
+                },
+            },
+            syn = {
+                string     = palette.rebeccaPink,
+                variable   = "none",
+                number     = palette.rebeccaPaleYel,
+                constant   = palette.rebeccaPaleYel,
+                identifier = palette.rebeccaMutedGrn,
+                parameter  = palette.rebeccaFgDim,
+                fun        = palette.rebeccaGreen,
+                statement  = palette.rebeccaYellow,
+                keyword    = palette.rebeccaYellow,
+                operator   = palette.rebeccaYellow,
+                preproc    = palette.rebeccaCyan,
+                type       = palette.rebeccaMutedGrn,
+                regex      = palette.rebeccaOrange,
+                deprecated = palette.rebeccaOlive,
+                comment    = palette.rebeccaDim,
+                punct      = palette.rebeccaFgDim,
+                special1   = palette.rebeccaCyan,
+                special2   = palette.rebeccaPink,
+                special3   = palette.rebeccaPinkDim,
+            },
+            vcs = {
+                added   = palette.rebeccaGreen,
+                removed = palette.rebeccaPink,
+                changed = palette.rebeccaYellow,
+            },
+            diff = {
+                add    = "#1A2810",
+                delete = "#2A1018",
+                change = "#1A2418",
+                text   = "#2A3818",
+            },
+            diag = {
+                ok      = palette.rebeccaGreen,
+                error   = palette.rebeccaPink,
+                warning = palette.rebeccaOrange,
+                info    = palette.rebeccaMutedGrn,
+                hint    = palette.rebeccaDim,
+            },
+            term = {
+                palette.rebeccaNearBlk,  -- black
+                palette.rebeccaPink,     -- red
+                palette.rebeccaGreen,    -- green
+                palette.rebeccaYellow,   -- yellow
+                palette.rebeccaMutedGrn, -- blue
+                palette.rebeccaDim,      -- magenta
+                palette.rebeccaCyan,     -- cyan
+                palette.rebeccaFg,       -- white
+                palette.rebeccaOlive,    -- bright black
+                palette.rebeccaPinkDim,  -- bright red
+                palette.rebeccaGreen,    -- bright green
+                palette.rebeccaPaleYel,  -- bright yellow
+                palette.rebeccaCyan,     -- bright blue
+                palette.rebeccaDim,      -- bright magenta
+                palette.rebeccaCyan,     -- bright cyan
+                palette.rebeccaFg,       -- bright white
+                palette.rebeccaOrange,   -- extended color 1
+                palette.rebeccaPinkDim,  -- extended color 2
+            },
+            lualine = {
+                normal   = palette.rebeccaYellow,
+                insert   = palette.rebeccaGreen,
+                visual   = palette.rebeccaPaleYel,
+                replace  = palette.rebeccaPink,
+                command  = palette.rebeccaCyan,
+                terminal = palette.rebeccaMutedGrn,
+                mid      = palette.rebeccaDarkOl,
+            },
         }
     end,
     ---@param palette PaletteColors
@@ -395,6 +635,15 @@ return {
                 palette.lotusInk2, -- bright white
                 palette.lotusOrange2, -- extended color 1
                 palette.lotusRed3, -- extended color 2
+            },
+            lualine = {
+                normal   = palette.lotusBlue4,
+                insert   = palette.lotusGreen,
+                visual   = palette.lotusViolet4,
+                replace  = palette.lotusOrange,
+                command  = palette.lotusYellow2,
+                terminal = palette.lotusViolet2,
+                mid      = palette.lotusBlue1,
             },
         }
     end,

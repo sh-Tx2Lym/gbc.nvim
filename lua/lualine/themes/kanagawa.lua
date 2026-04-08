@@ -1,43 +1,59 @@
-local theme = require("kanagawa.colors").setup().theme
+local colors = require("kanagawa.colors").setup()
+local theme  = colors.theme
+local ll     = theme.lualine
+local config = require("kanagawa").config
 
-local kanagawa = {}
+local bg_mid = config.transparent and "NONE" or ll.mid
+local bg_none = "NONE"
 
-kanagawa.normal = {
-  a = { bg = theme.syn.fun, fg = theme.ui.bg_m3 },
-  b = { bg = theme.diff.change, fg = theme.syn.fun },
-  c = { bg = theme.ui.bg_p1, fg = theme.ui.fg },
-}
-
-kanagawa.insert = {
-  a = { bg = theme.diag.ok, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.diag.ok },
-}
-
-kanagawa.command = {
-  a = { bg = theme.syn.operator, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.syn.operator },
-}
-
-kanagawa.visual = {
-  a = { bg = theme.syn.keyword, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.syn.keyword },
-}
-
-kanagawa.replace = {
-  a = { bg = theme.syn.constant, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.syn.constant },
-}
-
-kanagawa.inactive = {
-  a = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-  b = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim, gui = "bold" },
-  c = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-}
-
-if vim.g.kanagawa_lualine_bold then
-  for _, mode in pairs(kanagawa) do
-    mode.a.gui = "bold"
-  end
+local function section_a(accent)
+    return { bg = accent, fg = theme.ui.fg_reverse, gui = "bold" }
 end
+
+local function section_b(accent)
+    return { bg = bg_mid, fg = accent }
+end
+
+local function section_c()
+    return { bg = bg_none, fg = theme.ui.fg_dim }
+end
+
+local kanagawa = {
+    normal = {
+        a = section_a(ll.normal),
+        b = section_b(ll.normal),
+        c = section_c(),
+    },
+    insert = {
+        a = section_a(ll.insert),
+        b = section_b(ll.insert),
+        c = section_c(),
+    },
+    visual = {
+        a = section_a(ll.visual),
+        b = section_b(ll.visual),
+        c = section_c(),
+    },
+    replace = {
+        a = section_a(ll.replace),
+        b = section_b(ll.replace),
+        c = section_c(),
+    },
+    command = {
+        a = section_a(ll.command),
+        b = section_b(ll.command),
+        c = section_c(),
+    },
+    terminal = {
+        a = section_a(ll.terminal),
+        b = section_b(ll.terminal),
+        c = section_c(),
+    },
+    inactive = {
+        a = { bg = bg_none, fg = theme.ui.nontext },
+        b = { bg = bg_none, fg = theme.ui.nontext },
+        c = { bg = bg_none, fg = theme.ui.nontext },
+    },
+}
 
 return kanagawa

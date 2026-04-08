@@ -17,7 +17,7 @@ M.config = {
     transparent = false,
     dimInactive = false,
     terminalColors = true,
-    colors = { theme = { wave = {}, lotus = {}, dragon = {}, all = {} }, palette = {} },
+    colors = { theme = { wave = {}, lotus = {}, dragon = {}, nina = {}, rebecca = {}, all = {} }, palette = {} },
     ---@type fun(colors: KanagawaColorsSpec): table<string, table>
     overrides = function()
         return {}
